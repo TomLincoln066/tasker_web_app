@@ -2,11 +2,15 @@
 <html>
 
 <head>
-    <title>Tasks</title>
+    <!-- <title>Tasks</title> -->
+    <!-- <title>Tasks | {{ user_name }}</title> -->
+
 </head>
 
 <body>
-    <h1>Tasks</h1>
+    <!-- <h1>Tasks</h1> -->
+    <h1>{{ user_name }}</h1>
+
 
     <a href="{{ url_for('create_task') }}">Create Task</a>
     <a href="{{ url_for('tasks', sort_by='title') }}">Sort by Title</a>

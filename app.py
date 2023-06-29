@@ -74,22 +74,15 @@ def delete_task(id):
     db.session.commit()
     return redirect(url_for('tasks'))
 
-# @app.route('/tasks', methods=["GET"])
-# def tasks():
-#     if 'user_id' not in session:
-#         return redirect(url_for('home'))
-#     user_id = session['user_id']
-#     user = User.query.get(user_id)
-    
-#     tasks = Task.query.filter_by(user_id=user_id).order_by(Task.due_date).all()
-#     return render_template("tasks.html", user=user, tasks=tasks)
 
 @app.route('/tasks', methods=["GET"])
 def tasks():
     if 'user_id' not in session:
         return redirect(url_for('home'))
     user_id = session['user_id']
-    user = User.query.get(user_id)
+    user_name = User.query.get(user_id).name  # Get the user_name based on user_id
+
+    # user = User.query.get(user_id)
 
     sort_by = request.args.get('sort_by')  # Get the sort_by query parameter
 
@@ -103,7 +96,9 @@ def tasks():
     else:
         tasks = Task.query.filter_by(user_id=user_id).all()  # Default sorting
 
-    return render_template("tasks.html", user=user, tasks=tasks)
+    # return render_template("tasks.html", user=user, tasks=tasks)
+    return render_template("tasks.html", user_name=user_name, tasks=tasks)
+
 
 #logout
 @app.route('/logout')
