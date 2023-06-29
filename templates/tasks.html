@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tasks</title>
+</head>
+
+<body>
+    <h1>Tasks</h1>
+
+    <a href="{{ url_for('create_task') }}">Create Task</a>
+    <a href="{{ url_for('tasks', sort_by='title') }}">Sort by Title</a>
+    <a href="{{ url_for('tasks', sort_by='status') }}">Sort by Status</a>
+    <a href="{{ url_for('tasks', sort_by='due_date') }}">Sort by Due Date</a>
+    <a href="{{ url_for('tasks') }}">Default Sorting</a>
+    <a href="{{ url_for('logout') }}">Log Out</a>
+
+
+
+    <ul>
+        {% for task in tasks %}
+        <li>
+
+
+            <h2>{{ task.title }}</h2>
+            <p>{{ task.description }}</p>
+            <p>Status: {{ task.status }}</p>
+            <p>Due Date: {{ task.due_date }}</p>
+            
+            <a href="{{ url_for('delete_task', id=task.id) }}">Delete</a>
+
+            <a href="{{ url_for('edit_task', id=task.id) }}">Edit</a>
+
+
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

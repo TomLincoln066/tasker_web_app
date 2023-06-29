@@ -1,0 +1,57 @@
+h1 {
+    font-family: "Playfair Display", sans-serif; /* Specify the font family */
+    font-size: 64px; /* Specify the font size */
+    font-weight:bold;
+    color: #000000; /* Specify the font color */
+    margin-bottom: 20px;
+
+}
+
+
+h2 {
+    font-family: "Arial", sans-serif; /* Specify the font family */
+    font-size: 24px; /* Specify the font size */
+    color: #000000; /* Specify the font color */
+    margin-bottom: 20px;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+button {
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 300px;
+
+}
+
+button {
+    background-color: #4757EA;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
