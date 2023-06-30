@@ -32,6 +32,13 @@ form {
     align-items: center;
 }
 
+/* form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+} */
+
 input[type="text"],
 button {
     padding: 5px;
@@ -43,15 +50,23 @@ button {
 
 }
 
+
+
+
 button {
+    display: inline-block;
+    text-decoration: none;
     background-color: #4757EA;
     color: #ffffff;
-    border: none;
-    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
+
+button:hover {
+    background-color: #7B8FFA; /* Change background color on hover */
+  }
